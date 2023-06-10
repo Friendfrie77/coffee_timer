@@ -1,0 +1,25 @@
+.btn{
+    background-color: hsla(29, 39%, 44%, 65%);
+    font-size: 1.5rem;
+    border: .5px solid #fff;
+    border-radius: 5px;
+    color: #fff;
+    height: 5vh;
+    width: 5vw;
+    min-width: 100px;
+    min-height: 50px;
+    box-shadow: $drop-shadow;
+    &:hover{
+        background-color: #102542;
+    }
+}
+
+.btn-reset{
+    background-color: hsla(30, 59%, 21%, 65%);
+}
+
+.btn-group{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20%
+}

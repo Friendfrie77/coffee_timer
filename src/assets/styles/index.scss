@@ -6,6 +6,7 @@ $box-padding: 15px;
 $drop-shadow: (rgba(0,0,0,.4) 0px 5px 5px);
 $button-hover: #102542;
 
+
 :root{
     line-height: 1.5;
     text-rendering: optimizeLegibility;
@@ -16,7 +17,39 @@ $button-hover: #102542;
     color:#271300;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
+.root{
+    // width: 100vw;
+    // height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin for-size($size){
+    @if $size == tablet-only{
+        @media (max-width: 868px){ @content;}
+    }
+    @if $size == small-tablet-only{
+        @media (max-width: 720px){ @content;}
+    }
+    @if $size == large-phone-only{
+        @media (max-width: 535px) {@content;}
+    }
+    @if $size == phone-only{
+        @media (max-width: 460px){ @content;}
+    }
+    @if $size == small-phone-only{
+        @media (max-width: 300px){ @content;}
+    }
+    @if $size == small-desktop{
+        @media (max-width: 1300px){@content;}
+    }
+    @if $size == Desktop{
+        @media (min-width: 1300px) {@content;}
+    }
+    @if $size == large-desktop{
+        @media (min-width: 2000px) {@content;}
+    }
+}
 @import './buttons';
 @import './timerContainer';
 @import './stopwatch';

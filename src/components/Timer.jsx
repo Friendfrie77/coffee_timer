@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import Button from './button';
 import Stopwatch from './Stopwatch';
+import Coffeecup from './Coffeecup';
+import cup from '../assets/coffee-cup.svg';
 function Timer() {
   const [isActive, setIsActive] = useState(false);
   const [isPaused, setIsPaused] = useState(true);
@@ -9,6 +11,7 @@ function Timer() {
     setIsActive(true);
     setIsPaused(false);
   };
+  
   useEffect(() =>{
     let interval = null;
     if (isActive && isPaused === false){
@@ -29,19 +32,35 @@ function Timer() {
     setIsActive(false)
     setTime(0)
   }
+  useEffect(()=>{
+    if(time === 125000){
+      handlePause()
+    }
+  }, [time])
+  console.log(time)
   return (
-    <div className='timerContainer'>
-      <Stopwatch
-        isActive = {isActive}
-        timer = {time}
-      />
-      <Button
-        isActive = {isActive}
-        isPaused = {isPaused}
-        handleStart = {handleStart}
-        handlePause = {handlePause}
-        handleReset = {handleReset}
-       />
+    <div className='timerWrapper'>
+      <Coffeecup
+      timer = {time}
+      isActive = {isActive}
+      isPaused = {isPaused}
+      handleStart = {handleStart}
+      handlePause = {handlePause}
+      handleReset = {handleReset}
+      ></Coffeecup>
+      {/* <div className='timerContainer'>
+        <Stopwatch
+          isActive = {isActive}
+          timer = {time}
+        />
+        <Button
+          isActive = {isActive}
+          isPaused = {isPaused}
+          handleStart = {handleStart}
+          handlePause = {handlePause}
+          handleReset = {handleReset}
+        />
+      </div> */}
     </div>
   )
 }

@@ -67,14 +67,15 @@ function Stopwatch(props) {
                     <span className='digit'>{("0" + (Math.floor((props.timer / sec) % 60))).slice(-2)}</span>
                 </div>
                 <div className='msg-container'>
-                    {msg}
+                    <span>{msg}</span>
                 </div>
             </div>
     )
     const userInput = (
         <div className='coffee-input'>
+            <span className='center-span'>Please enter the amount of coffee you are using</span>
             <input name='coffee' onChange={handleCoffeeChange}></input>
-            <span>Total water needed: {waterDose * 5}g</span>
+            <span className='center-span'>Total water needed: {waterDose * 5}g</span>
         </div>
     )
   return (

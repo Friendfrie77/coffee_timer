@@ -1,3 +1,23 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+}
+
+html, body {
+  min-height: 100%;
+  height: 100%;
+  width: 100vw;
+}
+
+body {
+  overflow: auto;
+}
+
 /* CSS Reset */
 /* Box sizing rules */
 *,
@@ -92,6 +112,12 @@ select {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .btn {
   background-color: hsla(29, 39%, 44%, 0.65);
   font-size: 1.5rem;
@@ -118,14 +144,62 @@ select {
   gap: 20%;
 }
 
-.timerContainer {
+.timerWrapper {
   display: flex;
+  justify-self: center;
   align-items: center;
   padding: 15px;
+  position: relative;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+}
+
+.timerContainer {
+  position: absolute;
+  display: flex;
+  flex-direction: center;
   flex-direction: column;
+  align-items: center;
+  margin: 0;
+  top: 50%;
+  left: 10%;
+}
+
+.cup {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.cup svg {
+  margin: auto;
+}
+
+.fill {
+  background-color: red;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.stopwatch-container {
+  background-color: rgba(50, 50, 50, 0.3);
+  display: flex;
+  justify-content: center;
 }
 
 .coffee-input {
   display: flex;
   flex-direction: column;
+  width: 100%;
+}
+
+.digit {
+  font-size: 2rem;
+}
+
+.stopwatch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }/*# sourceMappingURL=index.css.map */

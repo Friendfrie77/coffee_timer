@@ -1,8 +1,19 @@
-// .stopwatch-container{
-//     display: flex;
-//     flex-direction: column;
-// }
+.stopwatch-container{
+    background-color: rgba(50,50,50, .3);
+    display: flex;
+    justify-content: center;
+}
 .coffee-input{
     display: flex;
     flex-direction: column;
+    width: 100%;
+}
+.digit{
+    font-size: 2rem;
+}
+.stopwatch{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
